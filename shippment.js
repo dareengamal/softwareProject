@@ -8,7 +8,8 @@ router.get('/' , ( req , res) => {
 
 export default router ;*/
 import express from 'express';
-import { getshippment, updateshippment, createshippment ,deleteshippment} from '../controllers/App.js';
+import { getshippment, updateshippment, createshippment,cancelshippment } from '../controllers/App.js';
+
 const router=express.Router();
 
 
@@ -16,8 +17,9 @@ const router=express.Router();
  router.get('/{order_id}',getshippment);
  router.post('/',createshippment);
  router.patch('/',updateshippment);
- //router.patch('/'.deleteshippment);
- router.delete('/',deleteshippment);
+
+ router.delete('/',cancelshippment);
+ //router.patch('/',cancelshippment)
 
 
 export default router;
